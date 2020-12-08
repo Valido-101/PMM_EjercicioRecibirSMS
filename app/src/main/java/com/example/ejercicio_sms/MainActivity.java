@@ -87,10 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Ejecutamos este método en un hilo
         MainActivity.this.runOnUiThread(new Runnable() {
             public void run() {
-                //Obtenemos el EditText
-                EditText editText = (EditText) findViewById(R.id.text_codigo);
-                //Actualizamos el texto que contiene
-                editText.setText(t);
+                //Actualizamos el texto que contiene el EditText
+                text_codigo.setText(t);
             }
         });
     }

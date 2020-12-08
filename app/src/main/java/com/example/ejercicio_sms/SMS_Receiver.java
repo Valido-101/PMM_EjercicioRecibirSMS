@@ -38,8 +38,7 @@ public class SMS_Receiver extends BroadcastReceiver {
                 msgs[i] = SmsMessage.createFromPdu((byte[]) pdus[i], format);
 
                 // Obtenemos el texto del mensaje
-                strMessage += "SMS from " + msgs[i].getOriginatingAddress();
-                strMessage += " :" + msgs[i].getMessageBody() + "\n";
+                strMessage += msgs[i].getMessageBody() + "\n";
 
                 // Obtenemos el código de entre todos los caracteres del texto mediante una expresión regular
                 String regex = "(\\d{8}$)";
