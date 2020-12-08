@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ejercicio_sms">
 
+    //Permisos necesarios para leer y manejar sms recibidos
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS"/>
 
@@ -12,10 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ejercicio_SMS">
+        //Etiquetas necesarias para el BroadcastReceiver
         <receiver
             android:name=".SMS_Receiver"
             android:enabled="true"
             android:exported="true">
+            //IntentFilter con el provider necesario para que funcione
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
